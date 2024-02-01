@@ -20,9 +20,6 @@ class SessionPaymentController extends Controller
         // Set your Stripe API key
         Stripe::setApiKey(env('STRIPE_SECRET'));
 
-        // Create a Payment Intent or perform any necessary processing for the session-based payment
-        // For demonstration purposes, let's assume we create a session and redirect the user to Checkout
-
         // Generate a session for Checkout
         $session = Session::create([
             'payment_method_types' => ['card'],

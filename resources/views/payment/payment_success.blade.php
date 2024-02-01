@@ -12,7 +12,7 @@
     <div class="payment-form-container">
         <form id="payment-form">
             <h1>Payment Compeleted</h1>
-            <a href="./payment/form" id="submit-button">Back</a>
+            <a href="{{ url("./payment/form") }}" id="submit-button">Back</a>
         </form>
     </div>
 </body>
