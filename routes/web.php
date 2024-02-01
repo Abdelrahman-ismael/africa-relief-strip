@@ -1,8 +1,8 @@
 <?php
 
 use Illuminate\Support\Facades\Route;
-use App\Http\Controllers\PaymentController;
-use App\Http\Controllers\SubscriptionController;
+use App\Http\Controllers\Payment\FormPaymentController;
+use App\Http\Controllers\Payment\SessionPaymentController;
 
 /*
 |--------------------------------------------------------------------------
@@ -15,16 +15,20 @@ use App\Http\Controllers\SubscriptionController;
 |
 */
 
-Route::get('/', function () {
-    return view('welcome');
+
+Route::group(['prefix' => 'payment'], function () {
+
+    Route::group(['prefix' => 'form'], function () {
+        Route::get('/', [FormPaymentController::class, 'showPaymentForm'])->name('payment.form');
+        Route::post('/process', [FormPaymentController::class, 'processPayment'])->name('payment.process');
+        Route::get('/success', [FormPaymentController::class, 'paymentSuccess'])->name('payment.success');
+    });
+
+    Route::group(['prefix' => 'session'], function () {
+        Route::get('/', [SessionPaymentController::class, 'showSessionPaymentForm'])->name('session.payment.form');
+        Route::post('/process', [SessionPaymentController::class, 'processSessionPayment'])->name('session.payment.process');
+        Route::get('/success', [SessionPaymentController::class, 'sessionPaymentSuccess'])->name('session.payment.success');
+        Route::get('/cancel', [SessionPaymentController::class, 'sessionPaymentCancel'])->name('session.payment.cancel');
+    });
+
 });
-
-Route::get('/payment', [PaymentController::class, 'showPaymentForm'])->name('payment.form');
-Route::post('/payment/process', [PaymentController::class, 'processPayment'])->name('payment.process');
-Route::get('/payment/success', [PaymentController::class, 'paymentSuccess'])->name('payment.success');
-
-
-
-
-Route::post('/subscribe', [SubscriptionController::class, 'subscribe']);
-Route::post('/cancel-subscription', [SubscriptionController::class, 'cancelSubscription']);

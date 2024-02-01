@@ -1,18 +1,20 @@
 <?php
-
-namespace App\Http\Controllers;
+namespace App\Http\Controllers\Payment;
 
 use Illuminate\Http\Request;
+use App\Http\Controllers\Controller;
 use Stripe\Stripe;
 use Stripe\Charge;
 
-class PaymentController extends Controller
+class FormPaymentController extends Controller
 {
+    // Method to show the payment form
     public function showPaymentForm()
     {
-        return view('payment_form');
+        return view('payment.form.payment_form');
     }
 
+    // Method to process the payment
     public function processPayment(Request $request)
     {
         // Set your Stripe API key
@@ -28,12 +30,14 @@ class PaymentController extends Controller
             'description' => 'Example Charge',
             'source' => $token,
         ]);
+
         // Handle successful payment
         return redirect()->route('payment.success')->with('success', 'Payment successful!');
     }
 
+    // Method to display the payment success page
     public function paymentSuccess()
     {
-        return view('payment_success');
+        return view('payment.payment_success');
     }
 }

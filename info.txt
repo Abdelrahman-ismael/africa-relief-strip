@@ -13,9 +13,9 @@
 
 
 
-        - Create session token
-        - impelement stripe cdn
-        - implement stripe iframe
+        -Create session token using Endpoint
+        -impelement stripe cdn
+        -implement stripe iframe
 
 
 

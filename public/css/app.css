@@ -1,9 +1,10 @@
 /* Font Import */
 @import url("https://fonts.googleapis.com/css2?family=Roboto:wght@400;700&display=swap");
-
+body {
+    font-family: "Roboto", sans-serif !important ; /* Apply Roboto font */
+}
 /* Form Container */
 .payment-form-container {
-    font-family: "Roboto", sans-serif; /* Apply Roboto font */
     max-width: 400px;
     margin: 250px auto; /* Center the form horizontally */
     padding: 40px;
@@ -11,7 +12,9 @@
     box-shadow: 0 0 20px rgba(0, 0, 0, 0.1); /* Add shadow effect */
     background-color: #fff;
 }
-
+#payment-form{
+    text-align: center;
+}
 /* Form Row */
 .form-row {
     margin-bottom: 20px;
@@ -49,6 +52,7 @@ label {
     border-radius: 5px;
     cursor: pointer;
     font-size: 16px;
+    text-decoration: none;
 }
 
 #submit-button:hover {
