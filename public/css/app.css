@@ -1,0 +1,56 @@
+/* Font Import */
+@import url("https://fonts.googleapis.com/css2?family=Roboto:wght@400;700&display=swap");
+
+/* Form Container */
+.payment-form-container {
+    font-family: "Roboto", sans-serif; /* Apply Roboto font */
+    max-width: 400px;
+    margin: 250px auto; /* Center the form horizontally */
+    padding: 40px;
+    border-radius: 10px;
+    box-shadow: 0 0 20px rgba(0, 0, 0, 0.1); /* Add shadow effect */
+    background-color: #fff;
+}
+
+/* Form Row */
+.form-row {
+    margin-bottom: 20px;
+}
+
+/* Form Label */
+label {
+    font-weight: bold;
+    margin-bottom: 5px;
+    display: block;
+}
+
+/* Stripe Element */
+#card-element {
+    padding: 10px;
+    border: 1px solid #ccc;
+    border-radius: 5px;
+    background-color: #f9f9f9;
+}
+
+/* Form Errors */
+#card-errors {
+    color: #fa755a;
+    font-size: 14px;
+    margin-top: 5px;
+}
+
+/* Submit Button */
+#submit-button {
+    font-family: "Roboto", sans-serif; /* Apply Roboto font */
+    background-color: #007bff;
+    color: #fff;
+    border: none;
+    padding: 10px 20px;
+    border-radius: 5px;
+    cursor: pointer;
+    font-size: 16px;
+}
+
+#submit-button:hover {
+    background-color: #0056b3;
+}

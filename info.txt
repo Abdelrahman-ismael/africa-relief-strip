@@ -16,3 +16,13 @@
         - Create session token
         - impelement stripe cdn
         - implement stripe iframe
+
+
+
+
+
+
+
+STRIPE_KEY=pk_test_51OeEABAp2YNKD8MGgxxo1tbTabuRK68NSVStRBuVAKhlzrU3tj0us1rMAxwbD00ngHwKJhPJdu4V18rvCg8cMOIR00NZqLTdJb
+STRIPE_SECRET=sk_test_51OeEABAp2YNKD8MGBaw63besDFDgXHIXkUo8SMcOKxiko680svjb0PJojfE62PCHqPCRhI2J5s82ZcwOia2D5raR00FHDusa8T
+

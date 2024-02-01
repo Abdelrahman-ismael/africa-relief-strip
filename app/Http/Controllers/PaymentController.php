@@ -3,7 +3,8 @@
 namespace App\Http\Controllers;
 
 use Illuminate\Http\Request;
-use Stripe;
+use Stripe\Stripe;
+use Stripe\Charge;
 
 class PaymentController extends Controller
 {
@@ -14,17 +15,19 @@ class PaymentController extends Controller
 
     public function processPayment(Request $request)
     {
-        Stripe\Stripe::setApiKey(env('STRIPE_SECRET'));
+        // Set your Stripe API key
+        Stripe::setApiKey(env('STRIPE_SECRET'));
 
-        $token = $request->stripeToken;
+        // Tokenize the card details using Stripe.js
+        $token = $request->input('stripeToken');
 
-        $charge = Stripe\Charge::create([
-            'amount' => 1000, // Amount in cents
+        // Charge the card
+        $charge = Charge::create([
+            'amount' => 999999, // Amount in cents
             'currency' => 'usd',
             'description' => 'Example Charge',
             'source' => $token,
         ]);
-
         // Handle successful payment
         return redirect()->route('payment.success')->with('success', 'Payment successful!');
     }
