@@ -1,0 +1,18 @@
+
+    Test Card
+    ============
+        --------------------------------------------------------------------
+        BRAND       |       NUMBER	    |      CVC      |   	DATE
+        ------------+-------------------+---------------+-------------------
+        Visa        |  4242424242424242	| Any 3 digits	| Any future date
+        Visa(debit)	|  4000056655665556	| Any 3 digits	| Any future date
+        Mastercard	|  5555555555554444	| Any 3 digits	| Any future date
+
+
+
+
+
+
+        - Create session token
+        - impelement stripe cdn
+        - implement stripe iframe

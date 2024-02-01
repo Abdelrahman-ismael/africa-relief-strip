@@ -31,4 +31,13 @@ return [
         'region' => env('AWS_DEFAULT_REGION', 'us-east-1'),
     ],
 
+    // 'stripe' => [
+    //     'model' => App\Models\User::class, // The model to use for billing records
+    //     'key' => env('STRIPE_KEY'), // Your Stripe public key
+    //     'secret' => env('STRIPE_SECRET'), // Your Stripe secret key
+    //     'webhook' => [
+    //         'secret' => env('STRIPE_WEBHOOK_SECRET'), // Your webhook secret
+    //         'tolerance' => env('STRIPE_WEBHOOK_TOLERANCE', 300), // Tolerance in seconds for webhook timestamp checks
+    //     ],
+    // ],
 ];
